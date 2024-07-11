@@ -1,0 +1,215 @@
+<%- include("partials/_header") %>
+
+  <style>
+    .form-control:valid {
+      border-color: green;
+    }
+
+    .form-control:invalid {
+      border-color: red;
+    }
+  </style>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">
+      <img src="https://i.ibb.co/y6zR5WB/logo.png" alt="logo" style="width: 100px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/src/views/tst.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/views/nosotros.ejs">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/src/views/patients.ejs">Reservas</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Formulario -->
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h3>Registro De Reservas</h3>
+      </div>
+      <div class="card-body">
+        <form action="/add" method="POST" class="custom-form" id="registroForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" name="nombres" placeholder="Nombres" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="Correo" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" placeholder="Teléfono" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fechaDeEntrada">Fecha de Entrada</label>
+                <input type="date" id="fechaDeEntrada" name="fechaDeEntrada" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fechaDeSalida">Fecha de Salida</label>
+                <input type="date" id="fechaDeSalida" name="fechaDeSalida" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="tipoDeHabitacion">Tipo de Habitación</label>
+                <select id="tipoDeHabitacion" name="tipoDeHabitacion" class="form-control" required>
+                  <option value="">Seleccionar Tipo de Habitación</option>
+                  <option value="Simple">Habitación Simple</option>
+                  <option value="Doble">Habitación Doble</option>
+                  <option value="Familia">Habitación Familia</option>
+                  <option value="Matrimonial">Habitación Matrimonial</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="numeroDeHabitacion">Número de Habitación</label>
+                <input type="number" id="numeroDeHabitacion" name="numeroDeHabitacion"
+                  placeholder="Número de Habitación" class="form-control" min="1" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="numeroDePersonas">Número de Personas</label>
+                <input type="number" id="numeroDePersonas" name="numeroDePersonas" placeholder="Número de Personas"
+                  class="form-control" min="1" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="peticionesEspeciales">Peticiones Especiales</label>
+                <textarea id="peticionesEspeciales" name="peticionesEspeciales" placeholder="Peticiones Especiales"
+                  class="form-control" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Metodo de Pago</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="metodoTarjeta" name="metodoDePago"
+                    value="Tarjeta de crédito" required>
+                  <label class="form-check-label" for="metodoTarjeta">
+                    Tarjeta de crédito
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="metodoYape" name="metodoDePago" value="Yape"
+                    required>
+                  <label class="form-check-label" for="metodoYape">
+                    Yape
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="metodoEfectivo" name="metodoDePago" value="Efectivo"
+                    required>
+                  <label class="form-check-label" for="metodoEfectivo">
+                    Efectivo
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="tarifa">Tarifa</label>
+                <select id="tarifa" name="tarifa" class="form-control" required>
+                  <option value="">Seleccionar Tarifa</option>
+                  <option value="Habitación Simple s/100.00">Habitación Simple s/100.00</option>
+                  <option value="Habitación Doble s/200.00">Habitación Doble s/200.00</option>
+                  <option value="Habitación Familia s/350.00">Habitación Familia s/350.00</option>
+                  <option value="Habitación Matrimonial s/400.00">Habitación Matrimonial s/400.00</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-info">Guardar Reserva</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('registroForm');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar el envío automático del formulario
+
+        if (form.checkValidity()) {
+          // Si el formulario es válido, mostrar la alerta
+          Swal.fire({
+            icon: 'success',
+            title: '¡Paciente registrado!',
+            text: 'El paciente se ha registrado correctamente.',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              form.submit(); // Envía el formulario después de que el usuario confirme la alerta
+            }
+          });
+        } else {
+          // Si el formulario no es válido, mostrar un mensaje de error o realizar otras acciones necesarias
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor completa todos los campos requeridos.',
+          });
+        }
+      });
+
+      // Agregar listeners para los campos y actualizar estilos según su validez
+      const inputs = form.querySelectorAll('.form-control');
+      inputs.forEach(input => {
+        input.addEventListener('input', function () {
+          if (input.checkValidity()) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+          } else {
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+          }
+        });
+      });
+    });
+  </script>
+
+  <%- include("partials/_footer") %>

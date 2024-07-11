@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Gran Hotel Villa del Sur</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu CSS personalizado -->
+    <link href="/styles.css" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la página Nosotros */
+        .banner {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            background-color: #F9E2AF;
+            /* Color de acento */
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .offer-section {
+            background-color: #4A249D;
+            /* Color primario */
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .offer-section a {
+            color: #FFD700;
+            /* Color dorado para enlaces en la oferta */
+        }
+
+        .offer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #009FBD;
+            /* Color secundario para enlaces */
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-custom {
+            background-color: #4A249D;
+            /* Color primario */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #fff;
+            /* Color del texto en el navbar */
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("partials/_header") %>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo.png" alt="logo" style="width: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/src/views/nosotros.ejs">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/src/views/patients.ejs">Reservas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="container">
+            <img src="/images/1.jpg" class="banner" alt="Banner principal">
+        </div>
+
+        <!-- Información del Hotel -->
+        <div class="container info-section">
+            <h2>Información</h2>
+            <p>
+                GRAN HOTEL VILLA DEL SUR dispone de piscina al aire libre, jardín, terraza y restaurante en San Vicente
+                de Cañete. Este hotel de 3 estrellas tiene wifi gratis, servicio de habitaciones y recepción 24 horas.
+                El bar es ideal para tomar algo.
+            </p>
+            <p>
+                El desayuno está disponible todas las mañanas e incluye opciones buffet, a la carta o continentales.
+            </p>
+            <h4>Servicios más populares</h4>
+            <ul>
+                <li>Piscina al aire libre</li>
+                <li>Parking gratis</li>
+                <li>WiFi gratis</li>
+                <li>Servicio de habitaciones</li>
+                <li>2 restaurantes</li>
+                <li>Habitaciones familiares</li>
+                <li>Bar</li>
+                <li>Desayuno</li>
+            </ul>
+        </div>
+
+        <!-- Oferta Especial -->
+        <div class="container offer-section">
+            <h2>Publicidad por Fiestas Patrias</h2>
+            <p>
+                ✨ ¡Celebra Fiestas Patrias en Gran Hotel Villa del Sur! 🎉🏨
+            </p>
+            <p>
+                Este feriado largo de Fiestas Patrias, escápate a Gran Hotel Villa del Sur y disfruta de una experiencia
+                vacacional inolvidable. Rodeado de belleza natural y con las mejores instalaciones, nuestro hotel es el
+                destino perfecto para celebrar la grandeza de nuestro país.
+            </p>
+            <p>Detalles de la Oferta:</p>
+            <ul>
+                <li>📅 Fechas: Aprovecha el feriado largo de Fiestas Patrias</li>
+                <li>📍 Ubicación: Gran Hotel Villa del Sur</li>
+                <li>💰 Tarifas Especiales: Consulta nuestras ofertas exclusivas para estas fechas.</li>
+            </ul>
+            <div class="contact-info">
+                <p>🔗 Para más información y reservas:</p>
+                <p>
+                    📲 <a href="tel:940482714">940482714</a><br>
+                    ☎️ <a href="tel:012847711">01 2847711</a><br>
+                    También puedes cotizar y obtener más información haciendo click en el siguiente enlace: <a
+                        href="https://wa.me/51940482714" target="_blank">WhatsApp</a><br>
+                    Facebook: <a href="https://www.facebook.com/ghvilladelsur/?locale=es_LA" target="_blank">Gran Hotel
+                        Villa del Sur</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Banner Secundario -->
+        <div class="container">
+            <img src="/images/2.jpg" class="banner" alt="Otro banner">
+        </div>
+
+        <!-- Bootstrap JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <%- include("partials/_footer") %>
+</body>
+
+</html>

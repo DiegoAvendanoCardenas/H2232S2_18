@@ -1,0 +1,128 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F6F5F5;
+  /* Color de fondo */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #F9E2AF;
+  /* Color de acento */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #4A249D;
+  /* Color primario */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Estilos del Navbar */
+.navbar-custom {
+  background-color: #4A249D;
+  /* Color primario para el navbar */
+}
+
+.navbar-custom .navbar-brand {
+  color: #fff;
+  /* Color del texto de la marca en el navbar */
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #fff;
+  /* Color de los enlaces en el navbar */
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path stroke="%23ffffff" stroke-width="3" d="M5 7h20M5 15h20M5 23h20"/></svg>');
+  /* Icono del toggler con color blanco */
+}
+
+/* Cambios en la apariencia de los inputs y botones */
+.form-control:valid {
+  border-color: green;
+}
+
+.form-control:invalid {
+  border-color: red;
+}
+
+.custom-form .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-form .btn {
+  background-color: #4A249D;
+  /* Color primario para el botón */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.custom-form .btn:hover {
+  background-color: #009FBD;
+  /* Color secundario para el hover del botón */
+}
+
+.custom-form .btn:active,
+.custom-form .btn:focus {
+  outline: none;
+}
+
+.custom-form input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 10px;
+}
+
+.custom-form input[type="text"]:focus,
+.custom-form input[type="email"]:focus,
+.custom-form input[type="date"]:focus {
+  border-color: #4A249D;
+  /* Color primario en el enfoque */
+  box-shadow: 0 0 5px rgba(74, 36, 157, 0.5);
+}
+
+.custom-form .form-check-input {
+  margin-right: 10px;
+}
+
+.custom-form .form-check-label {
+  margin-right: 20px;
+}
+
+.custom-form .form-group select {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.custom-form .spinner-border {
+  width: 2rem;
+  height: 2rem;
+  border-width: 0.25em;
+}
